@@ -6,6 +6,7 @@
   "dependencies": {
     "@ps/config": "0.0.0",
     "@ps/http": "0.0.0",
-    "@ps/store": "0.0.0"
+    "@ps/store": "0.0.0",
+    "vuex": "3.1.1"
   }
 }

@@ -8,6 +8,7 @@
 <script>
 import {pizzaModel} from './domain';
 import {PizzaMenu} from './components';
+
 export default {
   name: 'Pizza',
   components: {

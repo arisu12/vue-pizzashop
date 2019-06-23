@@ -113,6 +113,16 @@
       ],
       "image": "blob:http://localhost:8080/e929212c-a7c3-48ea-b3ac-f0253318a919",
       "id": 5
+    },
+    {
+      "name": "test3",
+      "price": "12",
+      "ingredients": [
+        1,
+        2
+      ],
+      "image": "blob:http://localhost:8080/896a5a98-4acd-48da-beee-94b7a3220d5c",
+      "id": 6
     }
   ],
   "ingredients": [

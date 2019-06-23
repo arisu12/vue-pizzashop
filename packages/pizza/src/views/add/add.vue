@@ -42,11 +42,8 @@
   </v-form>
 </template>
 <script>
-import {createNamespacedHelpers} from 'vuex';
-import {ingredientsModel} from '@ps/ingredients';
+import {ingredientsModel, ingredientsStore} from '@ps/ingredients';
 import {pizzaModel} from '../../domain';
-
-const {mapState} = createNamespacedHelpers('ingredients');
 
 export default {
   name: 'PizzaAdd',
@@ -59,7 +56,7 @@ export default {
     };
   },
   computed: {
-    ...mapState(['ingredients']),
+    ...ingredientsStore.mapState(['ingredients']),
   },
   beforeRouteEnter(to, from, next) {
     ingredientsModel.getIngredients().then(next);

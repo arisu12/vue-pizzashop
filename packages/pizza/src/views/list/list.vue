@@ -11,9 +11,8 @@
   </div>
 </template>
 <script>
-import {createNamespacedHelpers} from 'vuex';
 import {PizzaCard} from '../../components';
-const {mapState} = createNamespacedHelpers('pizza');
+import {pizzaStore} from '../../store';
 
 export default {
   name: 'PizzaList',
@@ -21,7 +20,7 @@ export default {
     PizzaCard,
   },
   computed: {
-    ...mapState(['pizzas']),
+    ...pizzaStore.mapState(['pizzas']),
   },
 };
 </script>

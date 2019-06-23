@@ -4,9 +4,8 @@
   </div>
 </template>
 <script>
-import {createNamespacedHelpers} from 'vuex';
 import {PizzaCard} from '../../components';
-const {mapGetters} = createNamespacedHelpers('pizza');
+import {pizzaStore} from '../../store';
 
 export default {
   name: 'PizzaDetail',
@@ -24,7 +23,7 @@ export default {
     };
   },
   computed: {
-    ...mapGetters(['getPizzaById']),
+    ...pizzaStore.mapGetters(['getPizzaById']),
     pizzaId() {
       return Number(this.id);
     },
