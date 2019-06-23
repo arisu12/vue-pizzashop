@@ -1,0 +1,12 @@
+{
+  "name": "@ps/style",
+  "version": "0.0.0",
+  "main": "src/index.js",
+  "license": "MIT",
+  "dependencies": {
+    "@mdi/font": "3.7.95",
+    "typeface-roboto": "0.0.54",
+    "vue": "2.6.10",
+    "vuetify": "1.5.16"
+  }
+}

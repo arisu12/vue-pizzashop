@@ -1,0 +1,1 @@
+export {ingredientsModel} from './domain';

@@ -1,0 +1,9 @@
+{
+  "name": "@ps/http",
+  "version": "0.0.0",
+  "main": "src/index.js",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "0.19.0"
+  }
+}

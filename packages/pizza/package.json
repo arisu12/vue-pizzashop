@@ -1,0 +1,13 @@
+{
+  "name": "@ps/pizza",
+  "version": "0.0.0",
+  "main": "src/index.js",
+  "license": "MIT",
+  "dependencies": {
+    "@ps/config": "0.0.0",
+    "@ps/ingredients": "0.0.0",
+    "@ps/http": "0.0.0",
+    "@ps/router": "0.0.0",
+    "vue": "2.6.10"
+  }
+}

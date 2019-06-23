@@ -1,0 +1,11 @@
+{
+  "name": "@ps/bootstrap",
+  "version": "0.0.0",
+  "main": "src/index.js",
+  "license": "MIT",
+  "dependencies": {
+    "@ps/app": "0.0.0",
+    "@ps/style": "0.0.0",
+    "core-js": "3.1.4"
+  }
+}

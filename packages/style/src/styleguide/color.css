@@ -1,0 +1,14 @@
+:root {
+  --ps-color-primary: #004d40;
+  --ps-color-primary--light: #39796b;
+  --ps-color-primary--dark: #00251a;
+  --ps-color-secondary: #ff6f00;
+  --ps-color-secondary--light: #ffa040;
+  --ps-color-secondary--dark: #c43e00;
+  --ps-color-text--primary: #ffffff;
+  --ps-color-text--secondary: #000000;
+  --ps-color-error: #f05545;
+  --ps-color-info: #26c6da;
+  --ps-color-success: #8bc34a;
+  --ps-color-warning: #ffa726;
+}
