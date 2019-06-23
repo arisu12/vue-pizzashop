@@ -35,6 +35,8 @@ module.exports = () => ({
   plugins: [
     new CleanWebpackPlugin(),
     new Dotenv({
+      path: null,
+      silent: true,
       safe: true,
       systemvars: true,
     }),

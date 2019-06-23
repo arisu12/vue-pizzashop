@@ -104,6 +104,15 @@
           "pizza": 2
         }
       ]
+    },
+    {
+      "name": "1r",
+      "price": "12",
+      "ingredients": [
+        1
+      ],
+      "image": "blob:http://localhost:8080/e929212c-a7c3-48ea-b3ac-f0253318a919",
+      "id": 5
     }
   ],
   "ingredients": [

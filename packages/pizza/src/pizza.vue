@@ -2,9 +2,7 @@
   <div>
     <h2 class="pizza__header">Pizza</h2>
     <pizza-menu></pizza-menu>
-    <template v-if="pizzasReady">
-      <router-view :pizzas="pizzas"></router-view>
-    </template>
+    <router-view></router-view>
   </div>
 </template>
 <script>
@@ -15,17 +13,8 @@ export default {
   components: {
     PizzaMenu,
   },
-  data() {
-    return {
-      pizzas: [],
-      pizzasReady: false,
-    };
-  },
-  created() {
-    pizzaModel.getAll().then((pizzas) => {
-      this.pizzas = pizzas;
-      this.pizzasReady = true;
-    });
+  beforeRouteEnter(to, from, next) {
+    pizzaModel.getPizzas().then(next);
   },
 };
 </script>

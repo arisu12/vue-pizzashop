@@ -6,6 +6,7 @@
   "dependencies": {
     "@ps/app": "0.0.0",
     "@ps/style": "0.0.0",
-    "core-js": "3.1.4"
+    "core-js": "3.1.4",
+    "regenerator-runtime": "0.13.2"
   }
 }

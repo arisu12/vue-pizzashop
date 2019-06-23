@@ -11,18 +11,17 @@
   </div>
 </template>
 <script>
+import {createNamespacedHelpers} from 'vuex';
 import {PizzaCard} from '../../components';
+const {mapState} = createNamespacedHelpers('pizza');
 
 export default {
   name: 'PizzaList',
   components: {
     PizzaCard,
   },
-  props: {
-    pizzas: {
-      type: Array,
-      required: true,
-    },
+  computed: {
+    ...mapState(['pizzas']),
   },
 };
 </script>

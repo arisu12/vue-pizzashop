@@ -1,11 +1,13 @@
 <template>
   <div class="pizza-detail">
-    <pizza-card :pizza="pizza"></pizza-card>
+    <pizza-card :pizza="getPizzaById(pizzaId)"></pizza-card>
   </div>
 </template>
 <script>
+import {createNamespacedHelpers} from 'vuex';
 import {PizzaCard} from '../../components';
-import {pizzaModel} from '../../domain';
+const {mapGetters} = createNamespacedHelpers('pizza');
+
 export default {
   name: 'PizzaDetail',
   components: {
@@ -21,12 +23,16 @@ export default {
       pizza: null,
     };
   },
+  computed: {
+    ...mapGetters(['getPizzaById']),
+    pizzaId() {
+      return Number(this.id);
+    },
+  },
   beforeMount() {
-    const pizza = pizzaModel.find(this.id);
+    const pizza = this.getPizzaById(this.pizzaId);
     if (!pizza) {
       this.$router.replace({name: 'pizza-list'});
-    } else {
-      this.pizza = pizza;
     }
   },
 };

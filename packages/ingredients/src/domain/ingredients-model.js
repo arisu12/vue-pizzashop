@@ -1,21 +1,16 @@
-import {ingredientsHTTP, ingredientsStore} from '../services';
+import {store} from '@ps/store';
+import {ingredientsHTTP} from '../services';
 
 export class IngredientsModel {
   constructor(http, store) {
     this._http = http;
     this._store = store;
   }
-  load() {
-    return this._http.get().then(({data}) => {
-      this._store.set(data);
+  getIngredients() {
+    return this._store.dispatch('ingredients/getIngredients', {
+      http: this._http,
     });
-  }
-  getAll() {
-    return this._store.getAll();
   }
 }
 
-export const ingredientsModel = new IngredientsModel(
-  ingredientsHTTP,
-  ingredientsStore
-);
+export const ingredientsModel = new IngredientsModel(ingredientsHTTP, store);

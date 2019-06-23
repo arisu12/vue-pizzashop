@@ -1,29 +1,22 @@
-import {pizzaHTTP, pizzaStore} from '../services';
+import {store} from '@ps/store';
+import {pizzaHTTP} from '../services';
 import {pizzaRules} from './rules';
 
 export class PizzaModel {
-  constructor(http) {
+  constructor(http, store) {
     this._http = http;
+    this._store = store;
+    this._loaded = false;
   }
   get rules() {
     return pizzaRules;
   }
-  getAll() {
-    return this._http.get().then(({data}) => {
-      pizzaStore.set(data);
-      return data;
-    });
+  getPizzas() {
+    return this._store.dispatch('pizza/getPizzas', {http: this._http});
   }
-  create({ingredients, name, price}) {
-    return this._http.post('', {
-      ingredients: [...ingredients],
-      name,
-      price,
-    });
-  }
-  find(id) {
-    return pizzaStore.get(Number(id));
+  addPizza(pizza) {
+    return this._store.dispatch('pizza/addPizza', {http: this._http, pizza});
   }
 }
 
-export const pizzaModel = new PizzaModel(pizzaHTTP);
+export const pizzaModel = new PizzaModel(pizzaHTTP, store);

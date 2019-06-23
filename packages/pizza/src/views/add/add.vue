@@ -42,28 +42,31 @@
   </v-form>
 </template>
 <script>
+import {createNamespacedHelpers} from 'vuex';
 import {ingredientsModel} from '@ps/ingredients';
 import {pizzaModel} from '../../domain';
+
+const {mapState} = createNamespacedHelpers('ingredients');
+
 export default {
   name: 'PizzaAdd',
   data() {
     return {
       valid: false,
       imgName: '',
-      ingredients: ingredientsModel.getAll(),
       rules: pizzaModel.rules,
       model: {},
     };
   },
+  computed: {
+    ...mapState(['ingredients']),
+  },
   beforeRouteEnter(to, from, next) {
-    ingredientsModel.load().then(() => {
-      next();
-    });
+    ingredientsModel.getIngredients().then(next);
   },
   methods: {
     create() {
-      const {name, price, ingredients = []} = this.model;
-      pizzaModel.create({name, price, ingredients}).then(() => {
+      pizzaModel.addPizza(this.model).then(() => {
         this.model.image = null;
         this.$refs.form.reset();
       });
